@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             background-color: transparent;
-            font-family: Georgia, serif;
+            font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -20,35 +20,41 @@
             background: linear-gradient(135deg, #2b221e 0%, #1a1412 100%);
             color: #dfc8b4;
             width: 100%;
-            max-width: 420px;
-            padding: 30px 25px;
+            max-width: 380px;
+            aspect-ratio: 16 / 9;
+            padding: 24px 20px;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             text-align: center;
             box-sizing: border-box;
             border: 1px solid rgba(223, 200, 180, 0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .icon-container {
-            font-size: 28px;
-            margin-bottom: 12px;
+            font-size: 24px;
+            margin-bottom: 6px;
             display: inline-block;
             animation: pulseIcon 2s infinite ease-in-out;
         }
 
         .widget-title {
-            font-size: 38px;
+            font-size: 32px;
             font-weight: normal;
-            margin: 0 0 10px 0;
+            margin: 0 0 6px 0;
             letter-spacing: 1px;
             color: #dfc8b4;
+            line-height: 1.1;
         }
 
         .widget-subtitle {
-            font-size: 13px;
+            font-size: 11.5px;
             color: #b5a494;
             margin: 0;
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
         @keyframes pulseIcon {
