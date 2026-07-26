@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Fund Widget</title>
+    <!-- Importing Comic Sans or fallback playful font styling to match your aesthetic -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+            font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .widget-card {
+            background: linear-gradient(135deg, #2b221e 0%, #1a1412 100%);
+            color: #f3ece1;
+            width: 100%;
+            max-width: 500px;
+            padding: 24px 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            text-align: center;
+            box-sizing: border-box;
+            border: 1px solid rgba(243, 236, 225, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .widget-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .icon-container {
+            font-size: 32px;
+            margin-bottom: 8px;
+            display: inline-block;
+            animation: pulseIcon 2s infinite ease-in-out;
+        }
+
+        .widget-title {
+            font-size: 26px;
+            font-weight: bold;
+            margin: 0 0 6px 0;
+            letter-spacing: 0.5px;
+            color: #dfc8b4;
+        }
+
+        .widget-subtitle {
+            font-size: 13px;
+            color: #b5a494;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        @keyframes pulseIcon {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="widget-card">
+        <div id="dynamic-icon" class="icon-container">🛡️</div>
+        <div class="widget-title">3-6 Months</div>
+        <div class="widget-subtitle">Safety Net Check: Is your emergency fund locked and secured today?</div>
+    </div>
+
+    <script>
+        // Array of custom safety/security dynamic icons rotating every few seconds
+        const icons = ["🛡️", "🔒", "🔐", "☂️"];
+        let currentIndex = 0;
+
+        const iconElement = document.getElementById("dynamic-icon");
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % icons.length;
+            iconElement.style.opacity = 0;
+            setTimeout(() => {
+                iconElement.textContent = icons[currentIndex];
+                iconElement.style.opacity = 1;
+            }, 200);
+        }, 3000);
+
+        // Simple smooth transition styling for the icon swap
+        iconElement.style.transition = "opacity 0.2s ease-in-out";
+    </script>
+
+</body>
+</html>
